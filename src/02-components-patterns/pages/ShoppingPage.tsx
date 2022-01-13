@@ -18,6 +18,14 @@ export const ShoppingPage = () => {
           flexWrap: 'wrap',
         }}
       >
+        {/* <ProductCard product={product}>
+          <ProductCard.Image />
+          <ProductCard.Title title="Hola Mundo" />
+          <ProductCard.Buttons increaseBy={function (value: number): void {
+            throw new Error('Function not implemented.');
+          } } counter={0} /> 
+        </ProductCard> */}
+
         <ProductCard product={product}>
           <ProductImage />
           <ProductTitle title="Hola Mundo" />

@@ -1,10 +1,14 @@
-import styles from '../styles/styles.module.css';
-import noImage from '../assets/no-image.jpg';
+
+import { ReactElement } from 'react';
 
 import { useProducts } from '../hooks/useProduct';
 
+import styles from '../styles/styles.module.css';
+import noImage from '../assets/no-image.jpg';
+
 interface Props {
   product: Product;
+  children?: ReactElement | ReactElement []
 }
 
 interface Product {
@@ -44,14 +48,17 @@ export const ProductButtons = ({increaseBy, counter}: ProductButtonsProps) => {
   );
 };
 
-export const ProductCard = ({ product }: Props) => {
+export const ProductCard = ({ children, product }: Props) => {
   const { counter, increaseBy } = useProducts();
 
   return (
     <div className={styles.productCard}>
+      { children }
+      {/* 
       <ProductImage img={product.img} />
       <ProductTitle title={product.title} />
-      <ProductButtons increaseBy={increaseBy} counter={counter} />
+      <ProductButtons increaseBy={increaseBy} counter={counter} /> 
+      */}
     </div>
   );
 };

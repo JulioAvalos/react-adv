@@ -39,19 +39,16 @@ export const ShoppingPage = () => {
     count: number;
     product: Product;
   }) => {
-
     setShoppingCart((oldShoppingCart) => {
-
-      if (count == 0) {
+      if (count === 0) {
         const { [product.id]: toDelete, ...rest } = oldShoppingCart;
-        return rest;  
-      } 
-      
+        return rest;
+      }
+
       return {
         ...oldShoppingCart,
         [product.id]: { ...product, count },
       };
-
     });
   };
 
@@ -86,37 +83,25 @@ export const ShoppingPage = () => {
       </div>
 
       <div className='shopping-cart'>
-        <ProductCard
-          product={product2}
-          className='bg-dark text-white'
-          style={{
-            width: '100px',
-          }}
-        >
-          <ProductImage
-            className='custom-image'
+        {Object.entries(shoppingCart).map(([key, product]) => (
+          <ProductCard
+            key={key}
+            product={product}
+            className='bg-dark text-white'
             style={{
-              boxShadow: '10px 10px 10px rgba(0,0,0,0.2)',
+              width: '100px',
             }}
-          />
-          <ProductButtons className='custom-buttons' />
-        </ProductCard>
+          >
+            <ProductImage
+              className='custom-image'
+              style={{
+                boxShadow: '10px 10px 10px rgba(0,0,0,0.2)',
+              }}
+            />
+            <ProductButtons className='custom-buttons' />
+          </ProductCard>
+        ))}
 
-        <ProductCard
-          product={product1}
-          className='bg-dark text-white'
-          style={{
-            width: '100px',
-          }}
-        >
-          <ProductImage
-            className='custom-image'
-            style={{
-              boxShadow: '10px 10px 10px rgba(0,0,0,0.2)',
-            }}
-          />
-          <ProductButtons className='custom-buttons' />
-        </ProductCard>
       </div>
 
       <div>

@@ -39,6 +39,9 @@ export const ShoppingPage = () => {
     count: number;
     product: Product;
   }) => {
+
+    console.log({ count });
+
     setShoppingCart((oldShoppingCart) => {
       if (count === 0) {
         const { [product.id]: toDelete, ...rest } = oldShoppingCart;
@@ -68,7 +71,7 @@ export const ShoppingPage = () => {
             key={product.id}
             product={product}
             className='bg-dark text-white'
-            onChange={(evento) => onProductCountChange(evento)}
+            onChange={onProductCountChange}
             value={ shoppingCart[product.id]?.count || 0 }
           >
             <ProductImage
@@ -90,7 +93,7 @@ export const ShoppingPage = () => {
             product={product}
             className='bg-dark text-white'
             value={product.count}
-            onChange={(evento) => onProductCountChange(evento)}
+            onChange={onProductCountChange}
             style={{
               width: '100px',
             }}

@@ -88,6 +88,7 @@ export const ShoppingPage = () => {
             key={key}
             product={product}
             className='bg-dark text-white'
+            value={product.count}
             style={{
               width: '100px',
             }}
@@ -104,9 +105,9 @@ export const ShoppingPage = () => {
 
       </div>
 
-      <div>
+      {/* <div>
         <code>{JSON.stringify(shoppingCart, null, 5)}</code>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -20,6 +20,14 @@ for (const input of formJson) {
     if (rule.type === 'required') {
       schema = schema.required('Este campo es requerido');
     }
+    
+    if(rule.type === 'minLength') {
+      schema = schema.min((rule as any).value || 2, `Minimo de ${(rule as any).value || 2} caracteres`);
+    }
+
+    if(rule.type === 'email') {
+      schema = schema.email('Direccion de email no valida');
+    }
 
     //... otras reglas
   }

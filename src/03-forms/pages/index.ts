@@ -1,3 +1,4 @@
+export { DynamicForm } from './DynamicForm';
 export { FormikBasicPage } from './FormikBasicPage';
 export { FormikAbstraction } from './FormikAbstraction';
 export { FormikComponents } from './FormikComponents';

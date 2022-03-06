@@ -12,5 +12,12 @@
         "placeholder": "Ingrese su apellido",
         "label": "Last Name",
         "value": ""
+    },
+    {
+        "type": "email",
+        "name": "email",
+        "placeholder": "Ingrese su correo",
+        "label": "Email",
+        "value": ""
     }
 ]
